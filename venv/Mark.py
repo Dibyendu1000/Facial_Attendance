@@ -2,6 +2,8 @@ from datetime import date
 import csv
 import os
 
+today=date.today()
+
 roll={'DIBYENDU':48,'SANGRAMJIT':17, 'SUBHRA':9,'SUBRATA':21}
 dept={'DIBYENDU':"CSE",'SANGRAMJIT':"IT", 'SUBHRA':"IT",'SUBRATA':'CSE'}
 
@@ -27,10 +29,9 @@ f.close()
 
 
 def attended(name):
-    print(present)
     f=open('Face Recog Pro//Attendance.csv','a+')
     if (present[name.upper()]==0):
-        today=date.today()    
+            
         f.write(today.strftime("%d/%m/%Y")+","+str(roll[name])+","+name+","+dept[name]+'\n')
         present[name.upper()]=1
         print("Present:",sum(present.values()))
