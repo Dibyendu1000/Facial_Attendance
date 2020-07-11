@@ -1,19 +1,22 @@
 from datetime import date
 import csv
 import os
+import random
 
 today=date.today()
 
-roll={'DIBYENDU':48,'SANGRAMJIT':17, 'SUBHRA':9,'SUBRATA':21}
-dept={'DIBYENDU':"CSE",'SANGRAMJIT':"IT", 'SUBHRA':"IT",'SUBRATA':'CSE'}
+roll={}
+dept={}
 
-path = 'Face Recog Pro//ImageAttendance'
+path = 'Face Recog Pro//Students'
 images=[]
 classNames=[]
 myList=os.listdir(path)
 present={}
 #print(myList)
 for cl in myList:
+    roll[os.path.splitext(cl)[0].upper()]=random.randint(1,100)
+    dept[os.path.splitext(cl)[0].upper()]=random.choice(['Dark Arts','Herbology','Transfiguration','Potions','Charms'])
     present[os.path.splitext(cl)[0].upper()]=0
 
 

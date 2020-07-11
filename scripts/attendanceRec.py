@@ -4,7 +4,7 @@ import face_recognition
 import os
 import Mark
 
-path = 'Face Recog Pro//ImageAttendance'
+path = 'Face Recog Pro//Students'
 images=[]
 classNames=[]
 myList=os.listdir(path)
